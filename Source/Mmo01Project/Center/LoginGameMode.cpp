@@ -58,49 +58,49 @@ void ALoginGameMode::UnInstallEvent()
 void ALoginGameMode::OnCreateAccountResult(const UKBEventData* pEventData)
 {
 	const UKBEventData_onCreateAccountResult* ServerData = Cast<UKBEventData_onCreateAccountResult>(pEventData);
-	HFH::Debug() << "OnCreateAccountResult : errorCode --> " << ServerData->errorCode << " ; errorStr --> " << ServerData->errorStr << HFH::Endl();
+	//HFH::Debug() << "OnCreateAccountResult : errorCode --> " << ServerData->errorCode << " ; errorStr --> " << ServerData->errorStr << HFH::Endl();
 }
 
 void ALoginGameMode::OnLoginFailed(const UKBEventData* pEventData)
 {
 	const UKBEventData_onLoginFailed* ServerData = Cast<UKBEventData_onLoginFailed>(pEventData);
 
-	HFH::Debug() << "OnLoginFailed : failedcode --> " << ServerData->failedcode << " ; errorStr --> " << ServerData->errorStr << HFH::Endl();
+	//HFH::Debug() << "OnLoginFailed : failedcode --> " << ServerData->failedcode << " ; errorStr --> " << ServerData->errorStr << HFH::Endl();
 }
 
 void ALoginGameMode::OnVersionNotMatch(const UKBEventData* pEventData)
 {
 	const UKBEventData_onVersionNotMatch* ServerData = Cast<UKBEventData_onVersionNotMatch>(pEventData);
 
-	HFH::Debug() << "OnVersionNotMatch : clientVersion --> " << ServerData->clientVersion << " ; serverVersion --> " << ServerData->serverVersion << HFH::Endl();
+	//HFH::Debug() << "OnVersionNotMatch : clientVersion --> " << ServerData->clientVersion << " ; serverVersion --> " << ServerData->serverVersion << HFH::Endl();
 }
 
 void ALoginGameMode::OnScriptVersionNotMatch(const UKBEventData* pEventData)
 {
 	const UKBEventData_onScriptVersionNotMatch* ServerData = Cast<UKBEventData_onScriptVersionNotMatch>(pEventData);
 
-	HFH::Debug() << "OnScriptVersionNotMatch : clientScriptVersion --> " << ServerData->clientScriptVersion << " ; serverScriptVersion --> " << HFH::Endl();
+	//HFH::Debug() << "OnScriptVersionNotMatch : clientScriptVersion --> " << ServerData->clientScriptVersion << " ; serverScriptVersion --> " << HFH::Endl();
 }
 
 void ALoginGameMode::OnLoginBaseappFailed(const UKBEventData* pEventData)
 {
 	const UKBEventData_onLoginBaseappFailed* ServerData = Cast<UKBEventData_onLoginBaseappFailed>(pEventData);
 
-	HFH::Debug() << "OnLoginBaseappFailed : failedcode --> " << ServerData->failedcode << " ; errorStr --> " << ServerData->errorStr << HFH::Endl();
+	//HFH::Debug() << "OnLoginBaseappFailed : failedcode --> " << ServerData->failedcode << " ; errorStr --> " << ServerData->errorStr << HFH::Endl();
 }
 
 void ALoginGameMode::OnLoginBaseapp(const UKBEventData* pEventData)
 {
 	const UKBEventData_onLoginBaseapp* ServerData = Cast<UKBEventData_onLoginBaseapp>(pEventData);
 
-	HFH::Debug() << "OnLoginBaseapp : eventName --> " << ServerData->eventName << HFH::Endl();
+	//HFH::Debug() << "OnLoginBaseapp : eventName --> " << ServerData->eventName << HFH::Endl();
 }
 
 void ALoginGameMode::OnLoginSuccessfully(const UKBEventData* pEventData)
 {
 	const UKBEventData_onLoginSuccessfully* ServerData = Cast<UKBEventData_onLoginSuccessfully>(pEventData);
 
-	HFH::Debug() << "OnLoginSuccessfully : entity_uuid --> " << ServerData->entity_uuid << " ; entity_id --> " << ServerData->entity_id << HFH::Endl();
+	//HFH::Debug() << "OnLoginSuccessfully : entity_uuid --> " << ServerData->entity_uuid << " ; entity_id --> " << ServerData->entity_id << HFH::Endl();
 
 	UGameplayStatics::OpenLevel(GetWorld(), FName("RoomMap"));
 }

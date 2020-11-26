@@ -8,6 +8,9 @@
 #include "SizeBoxSlot.h"
 #include "WidgetTree.h"
 #include "HFCommon.h"
+#include "Center/SelectRoleGameMode.h"
+#include "Center/RoleRenderActor.h"
+#include "TextBlock.h"
 
 void USelectRoleWidget::InitRoleListUI()
 {
@@ -38,6 +41,16 @@ void USelectRoleWidget::RoleItemClickedDele(FString RoleName)
 	for (TPair<FString, URoleItemWidget*>& element : RoleItemGroup) 
 	{		
 		element.Value->ShowMask(RoleName.Equals(element.Key));		
+	}
+
+	Text_RoleName->SetText(FText::FromString(RoleName));
+	if (RoleName == "Veigar")
+	{
+		MmoSelectRoleGamemode->RoleRenderActor->SwitchRoleMesh(1);
+	}
+	else
+	{
+		MmoSelectRoleGamemode->RoleRenderActor->SwitchRoleMesh(0);
 	}
 }
 

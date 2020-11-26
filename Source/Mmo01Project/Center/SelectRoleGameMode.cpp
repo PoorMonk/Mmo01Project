@@ -7,10 +7,17 @@
 #include "Scripts/MmoEventData.h"
 #include "Kismet/GameplayStatics.h"
 #include "HFCommon.h"
+#include "RoleRenderActor.h"
+#include "EngineUtils.h"
 
 void ASelectRoleGameMode::BeginPlay()
 {
 	Super::BeginPlay();
+
+	for (TActorIterator<ARoleRenderActor> ActorIt(GetWorld()); ActorIt; ++ActorIt)
+	{
+		RoleRenderActor = Cast<ARoleRenderActor>(*ActorIt);
+	}
 
 	MmoSelectRoleWidget = CreateWidget<USelectRoleWidget>(GetWorld(), SelectRoleClass);
 	MmoSelectRoleWidget->MmoSelectRoleGamemode = this;
@@ -37,6 +44,12 @@ void ASelectRoleGameMode::OnReqRoleList(const UKBEventData* pEventData)
 	MmoSelectRoleWidget->RoleList = ServerData->RoleList;
 
 	MmoSelectRoleWidget->InitRoleListUI();
+
+	// 默认显示第一个
+	if (MmoSelectRoleWidget->RoleList.Num() > 0)
+	{
+		MmoSelectRoleWidget->RoleItemClickedDele(MmoSelectRoleWidget->RoleList[0].Name);
+	}
 }
 
 void ASelectRoleGameMode::OnSelectRole(const UKBEventData* pEventData)

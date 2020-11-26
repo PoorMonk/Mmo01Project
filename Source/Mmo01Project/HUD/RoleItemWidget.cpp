@@ -25,6 +25,6 @@ void URoleItemWidget::ShowMask(bool bShow)
 
 void URoleItemWidget::OnBtnDownEvent()
 {
-	HFH::Debug() << "RoleName: " << RoleName << HFH::Endl();
+	//HFH::Debug() << "RoleName: " << RoleName << HFH::Endl();
 	RoleClickedDele.ExecuteIfBound(RoleName);
 }

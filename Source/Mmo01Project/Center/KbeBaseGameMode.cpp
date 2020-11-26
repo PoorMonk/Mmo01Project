@@ -54,15 +54,14 @@ void AKbeBaseGameMode::OnDisconnected(const UKBEventData* EventData)
 {
 	const UKBEventData_onDisconnected* ServerData = Cast<UKBEventData_onDisconnected>(EventData);
 
-	HFH::Debug() << "OnDisconnected: eventName --> " << ServerData->eventName << HFH::Endl();
+	//HFH::Debug() << "OnDisconnected: eventName --> " << ServerData->eventName << HFH::Endl();
 }
 
 void AKbeBaseGameMode::OnConnectionState(const UKBEventData* EventData)
 {
 	const UKBEventData_onConnectionState* ServerData = Cast<UKBEventData_onConnectionState>(EventData);
 
-	HFH::Debug() << "OnConnectionState: success --> " << ServerData->success << " ; address --> " <<
-		ServerData->address << HFH::Endl();
+	//HFH::Debug() << "OnConnectionState: success --> " << ServerData->success << " ; address --> " << ServerData->address << HFH::Endl();
 
 	if (!ServerData->success)
 	{

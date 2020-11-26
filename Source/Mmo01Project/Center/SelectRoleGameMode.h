@@ -7,6 +7,7 @@
 #include "SelectRoleGameMode.generated.h"
 
 class USelectRoleWidget;
+class ARoleRenderActor;
 
 /**
  * 
@@ -26,6 +27,9 @@ public:
 	// 玩家进入游戏场景
 	void AddSpaceGeometryMapping(const UKBEventData* EventData);
 
+public:
+	ARoleRenderActor* RoleRenderActor;
+
 protected:
 	void OnReqRoleList(const UKBEventData* pEventData);
 	void OnSelectRole(const UKBEventData* pEventData);
@@ -36,5 +40,6 @@ protected:
 	TSubclassOf<USelectRoleWidget> SelectRoleClass;
 
 	USelectRoleWidget* MmoSelectRoleWidget;
+	
 	
 };

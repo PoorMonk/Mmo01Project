@@ -10,6 +10,7 @@
 class ASelectRoleGameMode;
 class URoleItemWidget;
 class USizeBox;
+class UTextBlock;
 
 /**
  * 
@@ -45,6 +46,8 @@ protected:
 	USizeBox* RoleOneSizeBox;
 	UPROPERTY(Meta = (BindWidget))
 	USizeBox* RoleTwoSizeBox;
+	UPROPERTY(Meta = (BindWidget))
+	UTextBlock* Text_RoleName;
 
 	uint64 Dbid;
 };
